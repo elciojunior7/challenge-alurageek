@@ -51,8 +51,15 @@
 .contact-us__name{
     border: none;
     font-size: 1rem;
-    height: 3.5rem;
+    height: 4rem;
     padding: 0 .75rem;
+}
+
+.contact-us__name___label {
+    font-size: .75rem;
+    left: .75rem;
+    position: relative;
+    top: 2rem;
 }
 
 .contact-us__message{
