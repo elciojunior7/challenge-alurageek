@@ -1,4 +1,4 @@
-# AluraStore
+# AluraGeek
 
 Projeto relativo ao 3º challenge frontend Alura
 
