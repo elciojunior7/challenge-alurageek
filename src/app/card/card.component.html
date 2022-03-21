@@ -1,0 +1,9 @@
+<div class="card">
+    <img class="card__imagem" src="../../{{image}}">
+    <div class="card__corpo">
+        <h5 class="card__title">{{name}}</h5>
+        <div class="card__cost">R$ {{cost}}</div>
+        <a *ngIf="goLink" routerLink="" class="card__link">Ver Produto</a> 
+        <div *ngIf="!goLink">#111111</div>
+    </div>
+</div>

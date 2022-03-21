@@ -1,0 +1,35 @@
+.button--solid {
+    background-color: var(--primary-color);
+    border: none;
+    color: #FFF;
+    height: 2.5rem;
+    font-weight: 600;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    text-align: center;
+}
+
+.button--soft {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+    height: 2.5rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 768px){  /* > tablet */
+    .button--solid {
+        height: 3.1875rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .button--soft {
+        height: 3.1875rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}

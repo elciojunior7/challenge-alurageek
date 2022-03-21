@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    </head>
+    <body>
+        <alr-header></alr-header>
+        <section class="banner">
+            <div class="banner__image" alt="Banner"></div>
+            <div class="banner__content">
+                <h2 class="banner__title">Dezembro Promocional</h2>
+                <p class="banner__subtitle">Produtos selecionados com 33% de desconto</p>
+                <button class="banner__button button--solid">Ver Consoles</button>
+            </div>
+        </section>
+        <main class="content">
+            <section class="grid">
+                <div class="grid__header">
+                    <h4 class="grid__title">Star Wars</h4>
+                    <a class="grid__link">
+                        Ver Tudo
+                        <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
+                    </a>
+                </div>
+                <div class="cards">
+                    <alr-card image="assets/img/starwars/babyoda.svg" name="Baby Yoda" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/starwars/darth.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/starwars/kyle.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/starwars/stormtrooper.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card class="card--hide" image="assets/img/starwars/trooper.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card class="card--hide" image="assets/img/starwars/yoda.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                </div>
+            </section>
+            <section class="grid">
+                <div class="grid__header">
+                    <h4 class="grid__title">Consoles</h4>
+                    <a class="grid__link">
+                        Ver Tudo
+                        <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
+                    </a>
+                </div>
+                <div class="cards">
+                    <alr-card image="assets/img/console/gameboy.svg" name="Gameboy" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/console/nintendo.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/console/ps5.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/console/switch.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card class="card--hide" image="assets/img/console/xbox_x.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card class="card--hide" image="assets/img/console/xbox.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                </div>
+            </section>
+            <section class="grid">
+                <div class="grid__header">
+                    <h4 class="grid__title">Diversos</h4>
+                    <a class="grid__link">
+                        Ver Tudo
+                        <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
+                    </a>
+                </div>
+                <div class="cards">
+                    <alr-card image="assets/img/stuffs/atari.svg" name="Camisa Atari" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/stuffs/pikachu.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/stuffs/snes.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card image="assets/img/stuffs/sonic.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card class="card--hide" image="assets/img/stuffs/vr.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                    <alr-card class="card--hide" image="assets/img/stuffs/radiorelogio.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+                </div>
+            </section>
+        </main>
+        <alr-about-us></alr-about-us>
+        <footer class="footer">
+            <span>Desenvolvido por <a href="https://github.com/elciojunior7" target="_blank">Elcio Jr</a></span>
+            <span>&copy;2022</span>
+        </footer>
+    </body>
+</html>

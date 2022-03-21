@@ -1,0 +1,51 @@
+.card{
+    /* background-color: var(--background-default); */
+    display: grid;
+    grid-template-areas:
+        "card-imagem"
+        "card-corpo";
+    grid-template-columns: 100%;
+    grid-template-rows: 156px auto;
+}
+
+.card__imagem {
+    grid-area: card-imagem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card__corpo {
+    grid-area: card-corpo;
+    padding: .75rem .3rem;
+    display: grid;
+    row-gap: .5rem;
+    grid-template-areas:
+        "card-cabecalho"
+        "card-conteudo";
+    grid-template-rows: auto auto auto;
+}
+
+.card__title{
+    color: var(--text-color);
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.card__cost{
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.card__link{
+    color: var(--primary-color);
+    font-size: .875rem;
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1200px){  /* pc */  
+    .card__link{
+        font-size: 1rem;
+    }
+}
