@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'alr-root',
@@ -8,5 +7,5 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 })
 export class AppComponent {
   title = 'alura-store';
-  faArrowRight = faArrowRight;
+  
 }

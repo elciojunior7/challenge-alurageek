@@ -8,14 +8,14 @@
     grid-template-rows: 156px auto;
 }
 
-.card__imagem {
+.card__image {
     grid-area: card-imagem;
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.card__corpo {
+.card__body {
     grid-area: card-corpo;
     padding: .75rem .3rem;
     display: grid;
