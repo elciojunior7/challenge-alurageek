@@ -1,9 +1,5 @@
-.content{
-    background-color: var(--background-default);
-}
-
 .grid{
-    padding: 1.5rem 1rem .3rem 1rem;
+    padding: 1.5rem 0 .3rem 0;
 }
 
 .grid__header {
@@ -57,7 +53,7 @@
     }
 
     .grid{
-        padding: 1.5rem 9.5rem .3rem 9.5rem;
+        padding: 1.5rem 0 .3rem 0;
     }
 
     .grid__title {

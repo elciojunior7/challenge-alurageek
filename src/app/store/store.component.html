@@ -15,13 +15,8 @@
                 <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
             </a>
         </div>
-        <div class="cards">
-            <alr-card image="assets/img/starwars/babyoda.svg" name="Baby Yoda" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/starwars/darth.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/starwars/kyle.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/starwars/stormtrooper.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card class="card--hide" image="assets/img/starwars/trooper.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card class="card--hide" image="assets/img/starwars/yoda.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+        <div class="cards" >
+            <alr-card *ngFor="let p of products" image="{{p.imagePath}}" name="{{p.title}}" cost="{{p.cost}}" goLink="true" ></alr-card>
         </div>
     </section>
     <section class="grid">

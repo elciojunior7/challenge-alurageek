@@ -3,6 +3,7 @@
     display: grid;
     grid-template-areas:
         "card-imagem"
+        "card-action"
         "card-corpo";
     grid-template-columns: 100%;
     grid-template-rows: 156px auto;
@@ -10,9 +11,36 @@
 
 .card__image {
     grid-area: card-imagem;
+    position: relative;
+}
+
+.card__image___file{
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.card__image___content{
+    background-color: rgba(0,0,0,.5);
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.card__image___icon{
+    left: calc(50% - 1rem);
+    position: absolute;
+    top: calc(50% - 1rem);
+    transition: all .5s;
+}
+
+.card__delete{
+    cursor: pointer;
 }
 
 .card__body {
@@ -42,6 +70,31 @@
     color: var(--primary-color);
     font-size: .875rem;
     font-weight: 700;
+}
+
+@media screen and (min-width: 768px){  /* tablet */
+    .card__image___content{
+        background-color: transparent;
+        font-size: 1.1rem;
+        transition: all .5s;
+    }
+    
+    .card__image___content:hover{
+        background-color: rgba(0,0,0,.5);
+        font-size: 2.5rem;
+    }
+    
+    .card__image___content:hover .card__image___icon{
+        left: calc(50% - 1rem);
+        top: calc(50% - 1rem);
+    }
+    
+    .card__image___icon{
+        left: calc(90% - .8rem);
+        position: absolute;
+        top: 5%;
+        transition: all .5s;
+    }
 }
 
 @media screen and (min-width: 1200px){  /* pc */  

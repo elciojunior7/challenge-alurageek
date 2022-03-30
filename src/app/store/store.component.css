@@ -1,6 +1,6 @@
 .banner {
     position: relative;
-    background: url('../../assets/img/banner.png');
+    background: url('../../assets/img/banner.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -90,10 +90,6 @@
 
 /* -------------------------- */
 
-.content {
-    padding: 0 .7rem;
-}
-
 .grid{
     padding-bottom: .3rem;
 }
@@ -140,10 +136,6 @@
     .cards {
         grid-template-columns: calc(16.66% - .833rem) calc(16.66% - .833rem) calc(16.66% - .833rem) calc(16.66% - .833rem) calc(16.66% - .833rem) calc(16.66% - .833rem);
         grid-template-rows: auto;
-    }
-
-    .grid{
-        padding: 1.5rem 9.5rem .3rem 9.5rem;
     }
 
     .grid__title {

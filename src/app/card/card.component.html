@@ -1,5 +1,15 @@
 <div class="card">
-    <img class="card__image" src="../../{{image}}">
+    <div class="card__image">
+        <img class="card__image___file" src="../../{{image}}">
+        <div *ngIf="!goLink" class="card__image___content">
+            <div class="card__image___icon">
+                <fa-icon [icon]="faPencil"></fa-icon>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!goLink" class="button--delete card__delete">
+        <fa-icon class="header__search___icon" [icon]="faTrashCan"></fa-icon>
+    </div>
     <div class="card__body">
         <h5 class="card__title">{{name}}</h5>
         <div class="card__cost">R$ {{cost}}</div>

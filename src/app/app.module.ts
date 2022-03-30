@@ -12,6 +12,7 @@ import { AdmProductComponent } from './adm-product/adm-product.component';
 import { LoginComponent } from './login/login.component';
 import { DetailComponent } from './detail/detail.component';
 import { AdmProductsComponent } from './adm-products/adm-products.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AdmProductsComponent } from './adm-products/adm-products.component';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

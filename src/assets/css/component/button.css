@@ -20,6 +20,17 @@
     text-align: center;
 }
 
+.button--delete {
+    background-color: #b20000;
+    border: none;
+    color: var(--accent-color);
+    font-weight: 600;
+    height: 2.9rem;
+    padding-top: .7rem;
+    padding-bottom: .7rem;
+    text-align: center;
+}
+
 @media screen and (min-width: 768px){  /* > tablet */
     .button--solid {
         height: 3.1875rem;

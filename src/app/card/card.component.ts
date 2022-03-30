@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faTrashCan, faPencil } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'alr-card',
@@ -7,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  faTrashCan = faTrashCan;
+  faPencil = faPencil;
   @Input() image: string;
   @Input() name: string;
   @Input() cost: string;

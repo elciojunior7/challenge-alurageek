@@ -1,7 +1,3 @@
-.content{
-    background-color: var(--background-default);
-}
-
 .product{
     /* background-color: var(--background-default); */
     display: flex;
@@ -43,7 +39,7 @@
 }
 
 .grid{
-    padding: 0 1rem .3rem 1rem;
+    padding-bottom: .3rem;
 }
 
 .grid__header {
@@ -93,9 +89,6 @@
 }
 
 @media screen and (min-width: 1200px){  /* pc */
-    .content{
-        padding: 4rem 9.5rem;
-    }
     .product{
         flex-direction: row;
         margin: 0 auto;

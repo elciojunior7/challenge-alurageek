@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Product } from '../models/product';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'alr-store',
@@ -9,10 +11,21 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 export class StoreComponent implements OnInit {
 
   faArrowRight = faArrowRight;
+  products: Product[];
 
-  constructor() { }
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
+    this.listProducts();
+  }
+  
+  public listProducts() {
+    this.products = this.generalService.getAllProducts();
+    console.log(this.products)
+    // this.products.filter
+    // this.generalService.getAllProducts().subscribe(products => {
+    //   this.products = products;
+    // })
   }
 
 }
