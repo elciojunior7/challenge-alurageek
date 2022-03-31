@@ -7,7 +7,7 @@
     </div>
 </section>
 <main class="content">
-    <section class="grid">
+    <section class="grid" *ngIf="productsStarwars.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Star Wars</h4>
             <a class="grid__link">
@@ -16,10 +16,10 @@
             </a>
         </div>
         <div class="cards" >
-            <alr-card *ngFor="let p of products" image="{{p.imagePath}}" name="{{p.title}}" cost="{{p.cost}}" goLink="true" ></alr-card>
+            <alr-card *ngFor="let pStar of productsStarwars" image="{{pStar.imagePath}}" name="{{pStar.title}}" cost="{{pStar.cost}}" goLink="true" ></alr-card>
         </div>
     </section>
-    <section class="grid">
+    <section class="grid" *ngIf="productsConsoles.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Consoles</h4>
             <a class="grid__link">
@@ -28,15 +28,10 @@
             </a>
         </div>
         <div class="cards">
-            <alr-card image="assets/img/console/gameboy.svg" name="Gameboy" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/console/nintendo.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/console/ps5.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/console/switch.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card class="card--hide" image="assets/img/console/xbox_x.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card class="card--hide" image="assets/img/console/xbox.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+            <alr-card *ngFor="let pConsole of productsConsoles" image="{{pConsole.imagePath}}" name="{{pConsole.title}}" cost="{{pConsole.cost}}" goLink="true" ></alr-card>
         </div>
     </section>
-    <section class="grid">
+    <section class="grid" *ngIf="productsStuffs.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Diversos</h4>
             <a class="grid__link">
@@ -45,12 +40,7 @@
             </a>
         </div>
         <div class="cards">
-            <alr-card image="assets/img/stuffs/atari.svg" name="Camisa Atari" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/stuffs/pikachu.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/stuffs/snes.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card image="assets/img/stuffs/sonic.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card class="card--hide" image="assets/img/stuffs/vr.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
-            <alr-card class="card--hide" image="assets/img/stuffs/radiorelogio.svg" name="Produto XPTO" cost="200,00" goLink="true" ></alr-card>
+            <alr-card *ngFor="let pStuffs of productsStuffs" image="{{pStuffs.imagePath}}" name="{{pStuffs.title}}" cost="{{pStuffs.cost}}" goLink="true" ></alr-card>
         </div>
     </section>
 </main>

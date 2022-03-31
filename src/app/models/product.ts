@@ -4,7 +4,13 @@ export class Product {
     public id?: number,
     public title?: string, 
     public cost?: number, //cents
-    public idCategory?: number,
     public category?: string,
-    public imagePath?: string) { }
+    public imagePath?: string,
+    /*public image?: File*/) { }
+}
+
+export enum Category {
+  STARWARS = 'Star Wars',
+  CONSOLES = "Consoles",
+  STUFFS = "Stuffs",
 }
