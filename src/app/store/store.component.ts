@@ -36,5 +36,9 @@ export class StoreComponent implements OnInit {
     this.productsStuffs = products.filter((p) => p.category === Category.STUFFS);
     this.productsConsoles = products.filter((p) => p.category === Category.CONSOLES);
   }
+
+  scrollToConsoles(){
+    document.querySelector('#consoles').scrollIntoView();;
+  }
  
 }

@@ -1,12 +1,22 @@
 <main class="content">
-    <form class="product__form">
-        <h2 class="product__title">Adicionar novo produto</h2>
-        <label for="name" class="label--float">Nome do produto</label>
-        <input id="name" type="text" class="product__name" />
+    <form *ngIf="productForm" [formGroup]="productForm" class="product__form" (ngSubmit)="saveProduct()">
+        <h2 class="product__header___title">Adicionar novo produto</h2>
+        <div class="product__form___image">
+            <input style="display: none" type="file" (change)="onImageChanged($event)" #imageProduct>
+            <button type="button" (click)="imageProduct.click()" class="button--soft form__image___button">Procurar imagem</button>
+            <img id="imageFile" *ngIf="product && product.imagePath || selectedFile" class="form__image___file" src="{{imageBasePath}}/{{product.imagePath}}">
+        </div>
+        <label for="category">Categoria do produto</label>
+        <select id="category" formControlName="category">
+            <option *ngFor="let cat of categories" [ngValue]="cat">{{cat}}</option>
+        </select>
+        <label for="title" class="label--float">Nome do produto</label>
+        <input id="title" type="text" class="product__title" formControlName="title" required />
         <label for="cost" class="label--float">Preço do produto</label>
-        <input id="cost" type="text" class="product__cost" />
+        <input id="cost" type="number" class="product__cost" formControlName="cost" required />
         <label for="description" class="visibility-hidden">Descrição do produto</label>
-        <textarea id="description" class="product__description" placeholder="Descrição do produto"></textarea>
-        <button routerLink="" class="product__button button--solid">Adicionar produto</button>
+        <textarea id="description" class="product__description" placeholder="Descrição do produto" 
+                formControlName="description" value="{{product.description}}"></textarea>
+        <button type="submit" class="product__button button--solid">Adicionar produto</button>
     </form>
 </main>

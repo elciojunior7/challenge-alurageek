@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { DetailComponent } from './detail/detail.component';
 import { AdmProductsComponent } from './adm-products/adm-products.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

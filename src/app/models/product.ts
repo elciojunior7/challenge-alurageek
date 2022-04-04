@@ -6,6 +6,7 @@ export class Product {
     public cost?: number, //cents
     public category?: string,
     public imagePath?: string,
+    public description?: string,
     /*public image?: File*/) { }
 }
 

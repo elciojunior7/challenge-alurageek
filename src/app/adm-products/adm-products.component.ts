@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'alr-adm-products',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdmProductsComponent implements OnInit {
 
-  constructor() { }
+  products: Product[];
+
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
+    this.listProducts();
+  }
+  
+  public async listProducts(): Promise<void> {
+    this.products = await this.generalService.getAllProducts();
   }
 
 }

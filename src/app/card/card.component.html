@@ -1,19 +1,19 @@
 <div class="card">
     <div class="card__image">
-        <img class="card__image___file" src="../../{{image}}">
-        <div *ngIf="!goLink" class="card__image___content">
+        <img class="card__image___file" src="{{imageBasePath}}/{{product.imagePath}}">
+        <div *ngIf="!goLink" routerLink="/adm-product/{{product.id}}" class="card__image___content">
             <div class="card__image___icon">
                 <fa-icon [icon]="faPencil"></fa-icon>
             </div>
         </div>
     </div>
-    <div *ngIf="!goLink" class="button--delete card__delete">
+    <button type="submit" (click)="deleteProduct(product.id, product.imagePath)" *ngIf="!goLink" class="button--delete card__delete">
         <fa-icon class="header__search___icon" [icon]="faTrashCan"></fa-icon>
-    </div>
+    </button>
     <div class="card__body">
-        <h5 class="card__title">{{name}}</h5>
-        <div class="card__cost">R$ {{cost}}</div>
-        <a *ngIf="goLink" routerLink="/detail" class="card__link">Ver Produto</a> 
-        <div *ngIf="!goLink">#111111</div>
+        <h5 class="card__title">{{product.title}}</h5>
+        <div class="card__cost"> {{product.cost/100 | currency:'BRL':'symbol'}}</div>
+        <a *ngIf="goLink" routerLink="/detail/{{product.id}}" class="card__link">Ver Produto</a> 
+        <div *ngIf="!goLink"># {{product.id}}</div>
     </div>
 </div>

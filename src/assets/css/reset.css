@@ -4,6 +4,7 @@
 
 html {
     font-family: 'Relaway', serif;
+    scroll-behavior: smooth;
 }
 
 a {

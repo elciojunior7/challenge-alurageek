@@ -9,9 +9,10 @@ import { AdmProductComponent } from './adm-product/adm-product.component';
 const routes: Routes = [
   { path: '', redirectTo: '/store', pathMatch: 'full' },
   { path: 'store', component: StoreComponent },
+  { path: 'adm-product/:id', component: AdmProductComponent },
   { path: 'adm-product', component: AdmProductComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'detail', component: DetailComponent },
+  { path: 'detail/:id', component: DetailComponent },
   { path: 'adm-products', component: AdmProductsComponent }
 ];
 

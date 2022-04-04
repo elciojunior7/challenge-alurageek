@@ -3,7 +3,7 @@
     <div class="banner__content">
         <h2 class="banner__title">Dezembro Promocional</h2>
         <p class="banner__subtitle">Produtos selecionados com 33% de desconto</p>
-        <button class="banner__button button--solid">Ver Consoles</button>
+        <button type="button" *ngIf="productsConsoles.length > 0" class="banner__button button--solid" (click)="scrollToConsoles()">Ver Consoles</button>
     </div>
 </section>
 <main class="content">
@@ -16,10 +16,10 @@
             </a>
         </div>
         <div class="cards" >
-            <alr-card *ngFor="let pStar of productsStarwars" image="{{pStar.imagePath}}" name="{{pStar.title}}" cost="{{pStar.cost}}" goLink="true" ></alr-card>
+            <alr-card *ngFor="let pStar of productsStarwars" [product]="pStar" goLink="true" ></alr-card>
         </div>
     </section>
-    <section class="grid" *ngIf="productsConsoles.length > 0">
+    <section id="consoles" class="grid" *ngIf="productsConsoles.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Consoles</h4>
             <a class="grid__link">
@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="cards">
-            <alr-card *ngFor="let pConsole of productsConsoles" image="{{pConsole.imagePath}}" name="{{pConsole.title}}" cost="{{pConsole.cost}}" goLink="true" ></alr-card>
+            <alr-card *ngFor="let pConsole of productsConsoles" [product]="pConsole" goLink="true" ></alr-card>
         </div>
     </section>
     <section class="grid" *ngIf="productsStuffs.length > 0">
@@ -40,7 +40,7 @@
             </a>
         </div>
         <div class="cards">
-            <alr-card *ngFor="let pStuffs of productsStuffs" image="{{pStuffs.imagePath}}" name="{{pStuffs.title}}" cost="{{pStuffs.cost}}" goLink="true" ></alr-card>
+            <alr-card *ngFor="let pStuffs of productsStuffs" [product]="pStuffs" goLink="true" ></alr-card>
         </div>
     </section>
 </main>

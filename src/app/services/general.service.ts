@@ -1,21 +1,32 @@
-import { catchError } from 'rxjs/operators';
-import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Category, Product } from '../models/product';
-import { createClient } from "@supabase/supabase-js";
+import { Product } from '../models/product';
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
+
+export interface DataResponse {
+  msg: string,
+  status: number,
+  product: Product
+}
+
+type MyError = {
+  name?: string,
+  message: string,
+  details?: string,
+  hint?: string,
+  code?: string
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class GeneralService {
 
-  // API path
+export class GeneralService {
   uriBaseApiProduct = environment.apiUrl + '/products';
   uriBaseApiCategory = environment.apiUrl + '/categories';
 
-  supabase;
+  supabase: SupabaseClient;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -70,10 +81,20 @@ export class GeneralService {
           .select('*')
           .eq('id', id);
 
-      return data;
+      return data && data.length === 1 ? data[0] : null; 
   }
 
-  async addProduct(product: Product): Promise<any> {
+  async getProductByCategory(category: string): Promise<Product[]> {
+    const { data, error } = await this.supabase
+          .from('Product')
+          .select('*')
+          .eq('category', category);
+
+    return data;
+  }
+
+  async addProduct(product: Product): Promise<DataResponse> {
+    let myerror: MyError;
     const { data, error } = await this.supabase
       .from('Product')
       .insert([
@@ -81,15 +102,18 @@ export class GeneralService {
           title: product.title, 
           cost: product.cost, 
           category: product.category, 
-          imagePath: product.imagePath, 
-          // some_column: product.image, 
+          imagePath: product.imagePath,
+          description: product.description
         },
       ]);
 
-    return data;
+    if(error)
+      myerror = {message: error.message};
+    return this.handleReturn(null, myerror);
   }
 
-  async updateProduct(product: Product): Promise<any> {
+  async updateProduct(product: Product): Promise<DataResponse> {
+    let myerror: MyError;
     const { data, error } = await this.supabase
       .from('Product')
       .update(
@@ -97,29 +121,95 @@ export class GeneralService {
           title: product.title, 
           cost: product.cost, 
           category: product.category, 
-          imagePath: product.imagePath, 
-          // some_column: product.image, 
+          imagePath: product.imagePath,
+          description: product.description
         },
       )
       .eq('id', product.id);
-    return data;
+
+    if(error)
+      myerror = {message: error.message};
+    return this.handleReturn(null, myerror);
   }
 
-  async deleteProduct(id: number) {
+  async deleteProduct(id: number, filename: string): Promise<DataResponse> {
+    let myerror: MyError;
     const { data, error } = await this.supabase
       .from('Product')
       .delete()
-      .eq('some_column', 'someValue')
+      .eq('id', id);
 
-    return data;
+    if(filename)
+      await this.deleteImageProduct(filename);
+
+    if(error)
+      myerror = {message: error.message};
+    return this.handleReturn(null, myerror);
   }
 
-  async getProductByCategory(category: string): Promise<Product> {
+  async addImageAndProduct(file: File, product: Product): Promise<DataResponse> {
+    let resp = await this.uploadImageProduct(file);
+    let myerror: MyError;
+    if(resp.status === 200){
+      product.imagePath = resp.info;
+      resp = await this.addProduct(product);
+    }
+
+    if(resp.status === 500)
+      myerror = {message: resp.msg};
+    return this.handleReturn(null, myerror, resp.status);
+  }
+
+  async updateImageAndProduct(file: File, product: Product): Promise<DataResponse> {
+    let resp;
+    let myerror: MyError;
+    if(file){
+      resp = await this.uploadImageProduct(file);
+      if(resp.status === 200)
+      product.imagePath = resp.info;
+    }
+
+    if(!resp || resp.status === 200)
+      resp = await this.updateProduct(product);
+
+    if(resp.status === 500)
+      myerror = {message: resp.msg};
+    return this.handleReturn(null, myerror);
+  }
+
+  async uploadImageProduct(file: File): Promise<any> {
+    const { data, error } = await this.supabase.storage
+      .from('images')
+      .upload(`products/${file.name}`, file, {
+        cacheControl: '3600',
+        upsert: true
+      });
+
+    if(data)
+      return { info: data.Key, status: 200 };
+
+    return { info: error.message, status: 500 };
+  }
+
+  async deleteImageProduct(filename: string): Promise<any> {
+    let myerror: MyError;
     const { data, error } = await this.supabase
-          .from('Product')
-          .select('*')
-          .eq('category', category);
-      return data;
+        .storage
+        .from('images')
+        .remove([`products/${filename}`]);
+
+    if(error)
+      myerror = {message: error.message};
+    return this.handleReturn(null, myerror);
+  }
+      
+  private handleReturn(prod: Product, error?: MyError, status?: number){
+    if(error){
+      console.log(error.message)
+      return {msg: "Algo de errado não está certo =/", status: 500, product: prod};
+    }
+
+    return {msg: "Sucesso =]", status: status || 200, product: prod};
   }
 
 }

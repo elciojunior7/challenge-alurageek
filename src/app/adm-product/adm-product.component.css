@@ -11,14 +11,30 @@
     width: 100%;
 }
 
-.product__title {
+.product__form___image{
+    height: 15rem;
+    width: 100%;
+}
+
+.form__image___button{
+    width: 100%;;
+}
+
+.form__image___file{
+    padding-top: .5rem;
+    height: calc(15rem - 3.5rem);
+    object-fit: cover;
+    width: 100%;
+}
+
+.product__header___title {
     color: var(--text-color);
     font-size: 1.5rem;
     font-weight: 700;
     width: 100%;
 }
 
-.product__name, .product__cost{
+.product__title, .product__cost{
     border: none;
     color: var(--text-color);
     font-size: 1rem;
