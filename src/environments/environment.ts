@@ -4,7 +4,6 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8090/api',
   supabaseKey: process.env.SUPABASE_KEY,
   supabaseUrl: process.env.SUPABASE_URL,
   supabaseImagesUrl: process.env.SUPABASE_IMAGES_BASEURL

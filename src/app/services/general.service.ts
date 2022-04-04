@@ -23,9 +23,7 @@ type MyError = {
 })
 
 export class GeneralService {
-  uriBaseApiProduct = environment.apiUrl + '/products';
-  uriBaseApiCategory = environment.apiUrl + '/categories';
-
+  
   supabase: SupabaseClient;
 
   httpOptions = {
