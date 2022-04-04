@@ -34,6 +34,7 @@ export class GeneralService {
 
   constructor(private http: HttpClient) {
     //super();
+    console.log(environment.supabaseUrl)
     this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
 
