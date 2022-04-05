@@ -5,7 +5,7 @@
     "ng": "ng",
     "config": "ts-node ./scripts/setenv.ts",
     "start": "ng serve",
-    "build": "npm run config -- --environment=prod && ng build",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -24,17 +24,15 @@
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "@supabase/supabase-js": "^1.33.2",
-    "dotenv": "^16.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "webpack": "^5.71.0",
-    "yargs": "^17.4.0",
     "zone.js": "~0.11.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.2",
     "@angular/cli": "~11.2.2",
     "@angular/compiler-cli": "~11.2.3",
+    "@ngx-env/builder": "^1.1.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
