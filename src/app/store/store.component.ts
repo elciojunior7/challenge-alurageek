@@ -15,6 +15,7 @@ export class StoreComponent implements OnInit {
   productsStarwars: Product[] = [];
   productsStuffs: Product[] = [];
   productsConsoles: Product[] = [];
+  loading = true;
 
   constructor(private generalService: GeneralService) { }
 
@@ -25,10 +26,7 @@ export class StoreComponent implements OnInit {
   public async listProducts(): Promise<void> {
     const products = await this.generalService.getAllProducts();
     this.filterProducts(products);
-    // this.products.filter
-    // this.generalService.getAllProducts().subscribe(products => {
-    //   this.products = products;
-    // })
+    this.loading = false;
   }
 
   private filterProducts(products: Product[]): void{

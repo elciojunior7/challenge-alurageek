@@ -14,6 +14,7 @@ import { DetailComponent } from './detail/detail.component';
 import { AdmProductsComponent } from './adm-products/adm-products.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.circleSwish,
+      backdropBackgroundColour: 'rgba(255,255,255,.5)',
+      backdropBorderRadius: '4px',
+      primaryColour: '#2A7AE4'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

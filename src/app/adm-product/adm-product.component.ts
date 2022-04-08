@@ -16,7 +16,9 @@ export class AdmProductComponent implements OnInit {
   selectedFile: File;
   categories: string[];
   product: Product;
+  idProduct: string;
   imageBasePath = environment.supabaseImagesUrl;
+  loading: boolean = true;
 
   productForm: FormGroup;
 
@@ -25,9 +27,9 @@ export class AdmProductComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    const idProduct = this.route.snapshot.paramMap.get('id');
-    if(idProduct)
-      this.getProduct(parseInt(idProduct));
+    this.idProduct = this.route.snapshot.paramMap.get('id');
+    if(this.idProduct)
+      this.getProduct(parseInt(this.idProduct));
     else
       this.createProduct(new Product());
     this.listCategories();
@@ -41,6 +43,7 @@ export class AdmProductComponent implements OnInit {
       description: new FormControl(prod.description),
       category: new FormControl(prod.category),
     })
+    this.loading = false;
   }
 
   private async getProduct(idProduct: number): Promise<void> {
@@ -67,7 +70,8 @@ export class AdmProductComponent implements OnInit {
     // console.log(this.productForm.value); 
     // console.log(this.selectedFile); 
 
-    // TODO avaliar DE-PARA
+    this.loading = true;
+
     this.product.title = this.productForm.get('title').value;
     this.product.cost = this.productForm.get('cost').value;
     this.product.description = this.productForm.get('description').value;
@@ -82,11 +86,13 @@ export class AdmProductComponent implements OnInit {
         resp = await this.generalService.addImageAndProduct(this.selectedFile, this.product);
 
       console.log(resp)
-        
+      this.loading = false;  
+
       alert(resp.msg);
       if(resp.status !== 500)
         this.router.navigate(['/adm-products']);
-    }
+    }else
+      this.loading = false;  
   }
 
   private buildFileImage() {

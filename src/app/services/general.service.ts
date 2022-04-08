@@ -26,15 +26,8 @@ export class GeneralService {
   
   supabase: SupabaseClient;
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    }),
-  };
-
   constructor(private http: HttpClient) {
     //super();
-    console.log(process.env.NG_APP_SUPABASE_URL)
     this.supabase = createClient(environment.supabaseUrl, environment.supabaseKey);
   }
 
@@ -165,7 +158,7 @@ export class GeneralService {
     if(file){
       resp = await this.uploadImageProduct(file);
       if(resp.status === 200)
-      product.imagePath = resp.info;
+        product.imagePath = resp.info;
     }
 
     if(!resp || resp.status === 200)

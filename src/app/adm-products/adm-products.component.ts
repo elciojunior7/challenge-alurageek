@@ -10,6 +10,7 @@ import { GeneralService } from '../services/general.service';
 export class AdmProductsComponent implements OnInit {
 
   products: Product[];
+  loading: boolean = true;
 
   constructor(private generalService: GeneralService) { }
 
@@ -19,6 +20,7 @@ export class AdmProductsComponent implements OnInit {
   
   public async listProducts(): Promise<void> {
     this.products = await this.generalService.getAllProducts();
+    this.loading = false;
   }
 
 }

@@ -17,6 +17,7 @@
         <label for="description" class="visibility-hidden">Descrição do produto</label>
         <textarea id="description" class="product__description" placeholder="Descrição do produto" 
                 formControlName="description" value="{{product.description}}"></textarea>
-        <button type="submit" class="product__button button--solid">Adicionar produto</button>
+        <button id="btnSubmit" type="submit" class="product__button button--solid">{{ !idProduct ? 'Adicionar produto' : 'Editar produto' }}</button>
     </form>
 </main>
+<ngx-loading [show]="loading"></ngx-loading>

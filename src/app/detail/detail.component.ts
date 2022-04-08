@@ -14,6 +14,7 @@ export class DetailComponent implements OnInit {
   product: Product;
   productsByCategory: Product[] = [];
   imageBasePath = environment.supabaseImagesUrl;
+  loading: boolean = true;
 
   constructor(private route:ActivatedRoute, private generalService: GeneralService) { }
 
@@ -21,15 +22,16 @@ export class DetailComponent implements OnInit {
     const idProduct = this.route.snapshot.paramMap.get('id');
     this.assignProduct(parseInt(idProduct));
   }
-
+  
   private async assignProduct(idProduct: number): Promise<void> {
     this.product = await this.generalService.getProductById(idProduct);
     this.assignProducts(this.product.category);
   }
-
+  
   assignProducts = async (category: string) => {
     const productsByCategory = await this.generalService.getProductByCategory(category);
     this.productsByCategory = productsByCategory.filter((p) => this.product.id !== p.id);
+    this.loading = false;
   }
 
 }
