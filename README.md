@@ -25,5 +25,5 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
 
 
 <div align="center">
-  <img style="width: 250px;" src="./src/assets/img/Logo.png" alt="Logo AluraGeek" />
+  <img style="width: 200px;" src="./src/assets/img/Logo.png" alt="Logo AluraGeek" />
 </div>
