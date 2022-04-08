@@ -3,6 +3,8 @@
 Projeto relativo ao 3º challenge frontend Alura - Plataforma de produtos AluraGeek (cadastro de produtos e visualização dos mesmos).
 O challenge consiste no desenvolvimento de features disponibilizadas semanalmente no Trello, com layout disponibilizado no Figma, e ao final de um mês, consolidar em uma aplicação dentro do escopo estabelecido.
 
+[Link do desafio](https://www.alura.com.br/challenges/front-end-3?host=https://cursos.alura.com.br)!
+
 ## 🛠️ Tecnologias e técnicas
 
 - HTML
@@ -19,3 +21,9 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
 ## 🌎 Acesso online
 
 [https://challenge-alurageek.vercel.app/](https://challenge-alurageek.vercel.app/)
+
+
+
+<div align="center">
+  <img style="width: 250px;" src="./src/assets/img/Logo.png" alt="Logo AluraGeek" />
+</div>
