@@ -25,7 +25,7 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
 
 ### Ícones usados neste Readme.md
 
-[emojipedia](https://emojipedia.org)
+[Emojipedia](https://emojipedia.org/)
 
 <div align="center">
   <img style="width: 200px;" src="./src/assets/img/Logo.png" alt="Logo AluraGeek" />
