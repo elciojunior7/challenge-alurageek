@@ -23,6 +23,9 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
 [https://challenge-alurageek.vercel.app/](https://challenge-alurageek.vercel.app/)
 
 
+### Ícones usados neste Readme.md
+
+[emojipedia](https://emojipedia.org)
 
 <div align="center">
   <img style="width: 200px;" src="./src/assets/img/Logo.png" alt="Logo AluraGeek" />
