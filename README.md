@@ -23,7 +23,7 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
 [https://challenge-alurageek.vercel.app/](https://challenge-alurageek.vercel.app/)
 
 
-## Ícones usados neste Readme.md
+## 👉 Ícones usados neste Readme.md
 
 [Emojipedia](https://emojipedia.org/)
 
