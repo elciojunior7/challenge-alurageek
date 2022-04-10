@@ -1,10 +1,16 @@
 <main class="content">
     <section class="grid" *ngIf="productsByCategory && productsByCategory.length > 0">
         <div class="grid__header">
-            <h4 class="grid__title">Produtos da categoria [ {{ category }} ]</h4>
+            <h4 class="grid__title">{{ category ? 'Produtos da categoria ' + category : 'Resultado da pesquisa de categorias com termo "' + term + '"'}}</h4>
         </div>
         <div class="cards">
             <alr-card *ngFor="let prod of productsByCategory" [product]="prod" goLink="true" ></alr-card>
+        </div>
+    </section>
+    <section class="grid" *ngIf="productsByCategory && productsByCategory.length == 0">
+        <div class="grid__header">
+            <h4 class="grid__title">Não encontramos nenhum produto - Lista vazia</h4><br/>
+            <p>Deseja voltar a página inicial? <a routerLink="/store">Clique aqui</a></p>
         </div>
     </section>
 </main>

@@ -19,9 +19,9 @@ export class DetailComponent implements OnInit, OnDestroy {
   navigationSubscription: SubscriptionLike;
 
   constructor(private route:ActivatedRoute, private generalService: GeneralService, private router: Router) {
-    // hack in order to Angular does something if it calls same route (detail/:id)
+    // hack - in order to Angular does something if it calls same route (detail/:id)
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
-      if (e instanceof NavigationEnd) {
+      if (e instanceof NavigationEnd && this.product) {
         this.loading = true;
         this.searchProductByIdRoute();
       }

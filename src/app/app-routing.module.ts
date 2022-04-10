@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'detail/:id', component: DetailComponent },
   { path: 'products/:category', component: ProductsCategoryComponent },
+  { path: 'products/query/:queryTerm', component: ProductsCategoryComponent },
   { path: 'adm-product/:id', component: AdmProductComponent, canActivate: [AuthGuard] },
   { path: 'adm-product', component: AdmProductComponent, canActivate: [AuthGuard] },
   { path: 'adm-products', component: AdmProductsComponent, canActivate: [AuthGuard] }

@@ -88,6 +88,15 @@ export class GeneralService {
     return data;
   }
 
+  async getProductByPartCategory(term: string): Promise<Product[]> {
+    const { data, error } = await this.supabase
+          .from('Product')
+          .select('*')
+          .ilike('category', `%${term}%`)
+
+    return data;
+  }
+
   async addProduct(product: Product): Promise<DataResponse> {
     let myerror: MyError;
     const { data, error } = await this.supabase

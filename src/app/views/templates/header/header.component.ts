@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { SubscriptionLike } from 'rxjs';
 import { GeneralService } from 'src/app/services/general.service';
 
@@ -12,8 +12,11 @@ import { GeneralService } from 'src/app/services/general.service';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   faMagnifyingGlass = faMagnifyingGlass;
+  faXmark = faXmark;
   navigationSubscription: SubscriptionLike;
   isLogged: boolean;
+  isSearch: boolean = false;
+  term: string;
 
   constructor(private router: Router, private generalService: GeneralService) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
@@ -31,6 +34,19 @@ export class HeaderComponent implements OnInit, OnDestroy {
     if(this.generalService.logoff()){
       this.isLogged = false;
       this.router.navigate(['/store']);
+    }
+  }
+
+  setSearch(){
+    this.isSearch = !this.isSearch;
+  }
+
+  search(){
+    if(this.term.trim().length > 0){
+      this.router.navigate([`/products/query/${this.term}`]);
+      this.term = undefined;
+    }else{
+      alert("Digite categoria a ser pesquisada");
     }
   }
 

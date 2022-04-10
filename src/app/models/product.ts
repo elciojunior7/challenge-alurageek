@@ -13,5 +13,5 @@ export class Product {
 export enum Category {
   STARWARS = 'Star Wars',
   CONSOLES = "Consoles",
-  STUFFS = "Stuffs",
+  STUFFS = "Diversos",
 }

@@ -11,7 +11,7 @@ import { AdmProductComponent } from './views/admin/adm-product/adm-product.compo
 import { LoginComponent } from './views/login/login.component';
 import { DetailComponent } from './views/detail/detail.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule  } from '@angular/forms';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
 // **************************************************
@@ -40,6 +40,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ProductsCategoryComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     FontAwesomeModule,
     AppRoutingModule,
