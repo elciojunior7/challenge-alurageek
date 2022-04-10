@@ -1,6 +1,6 @@
 # AluraGeek
 
-Projeto relativo ao 3º challenge frontend Alura - Plataforma de produtos AluraGeek (cadastro de produtos e visualização dos mesmos).
+Projeto relativo ao 3º challenge frontend Alura - Plataforma de produtos AluraGeek - cadastro de produtos (CRUD completo a partir de área logada) e visualização dos mesmos.
 O challenge consiste no desenvolvimento de features disponibilizadas semanalmente no Trello, com layout disponibilizado no Figma, e ao final de um mês, consolidar em uma aplicação dentro do escopo estabelecido.
 
 [Link do desafio](https://www.alura.com.br/challenges/front-end-3?host=https://cursos.alura.com.br)!
@@ -14,6 +14,7 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
   - ngx-loading (loading durante requests)
   - ngx-mask (mácara de campos)
   - @angular/forms (FormControl, Validators para controle de validação de campos required, RegEx, etc)
+  - @fortawesome/angular-fontawesome (icons)
   - AuthGuard e canActivate (para impedir acesso às rotas ADM sem ter feito login)
 - Supabase (backend e banco de dados)
 - Node.js/ npm
