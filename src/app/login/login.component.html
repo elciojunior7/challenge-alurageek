@@ -1,10 +1,17 @@
 <main class="content">
-    <form class="login__form">
-        <h2 class="login__title">Iniciar Sessão</h2>
-        <label for="email" class="visibility-hidden">Escreva seu e-mail</label>
-        <input id="email" type="text" class="login__email" placeholder="Escreva seu e-mail" />
-        <label for="password" class="visibility-hidden">Escreva sua senha</label>
-        <input id="email" type="text" class="login__senha" placeholder="Escreva sua senha" />
-        <a routerLink="/adm-products" class="login__button button--solid">Entrar</a>
+    <form class="login__form" [formGroup]="loginForm" (ngSubmit)="login()">
+        <h2 class="login__title">Iniciar Sessão <span class="login__title___obs">(email: bob@bob.com / senha: bob)</span></h2>
+        <br/>
+        <label for="email" class="label--float">Escreva seu e-mail</label>
+        <input id="email" type="text" class="login__email input--ordinary" formControlName="email" [class.input--error]="email?.invalid && submittedOnce" />
+        <p *ngIf="email?.errors?.required && (email?.dirty || submittedOnce)" class="message--error">Campo obrigatório</p>
+        <p *ngIf="email?.errors?.email && submittedOnce && email?.dirty" class="message--error">Formato de e-mail inválido</p>
+        <br/>
+        <label for="password" class="label--float">Escreva sua senha</label>
+        <input id="password" type="text" class="login__senha input--ordinary" formControlName="password" [class.input--error]="password?.invalid && submittedOnce" />
+        <p *ngIf="password?.errors?.required && (password?.dirty || submittedOnce)" class="message--error">Campo obrigatório</p>
+        <p *ngIf="loginError && submittedOnce" class="message--error">E-mail e/ou senha incorreto(s)</p>
+        <br/><br/>
+        <button type="submit" class="login__button button--solid">Entrar</button>
     </form>
 </main>

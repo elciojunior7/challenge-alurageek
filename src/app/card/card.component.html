@@ -12,7 +12,7 @@
     </button>
     <div class="card__body">
         <h5 class="card__title">{{product.title}}</h5>
-        <div class="card__cost"> {{product.cost/100 | currency:'BRL':'symbol'}}</div>
+        <div class="card__cost"> {{product.cost | currency:'BRL':'symbol'}}</div>
         <a *ngIf="goLink" routerLink="/detail/{{product.id}}" class="card__link">Ver Produto</a> 
         <div *ngIf="!goLink"># {{product.id}}</div>
     </div>

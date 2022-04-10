@@ -12,8 +12,11 @@
 }
 
 .product__form___image{
-    height: 15rem;
     width: 100%;
+}
+
+.product__form___image--filled{
+    height: 15rem;
 }
 
 .form__image___button{
@@ -34,23 +37,6 @@
     width: 100%;
 }
 
-.product__title, .product__cost{
-    border: none;
-    color: var(--text-color);
-    font-size: 1rem;
-    height: 3rem;
-    padding: 0 .75rem;
-}
-
-.product__description{
-    border: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
-    height: 5rem;
-    padding: .75rem;
-    resize: none;
-}
-
 .product__button {
     font-size: 1rem;
     width: 100%;
@@ -58,16 +44,6 @@
 
 @media screen and (min-width: 1200px){  /* pc */
     .product__form {
-        width: 22rem;
         width: 35rem;
-    }
-    .product__title {
-        font-size: 2rem;
-    }
-    .product__email, .product__senha{
-        height: 3rem;
-    }
-    .product__button {
-        width: 100%;
     }
 }

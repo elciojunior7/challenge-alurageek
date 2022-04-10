@@ -49,19 +49,7 @@
 }
 
 .contact-us__name{
-    border: none;
-    font-size: 1rem;
     height: 4rem;
-    padding: 0 .75rem;
-}
-
-.contact-us__message{
-    border: none;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1rem;
-    height: 5rem;
-    padding: .75rem;
-    resize: none;
 }
 
 .contact-us__button {

@@ -24,6 +24,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
     "@supabase/supabase-js": "^1.33.2",
     "ngx-loading": "^8.0.0",
+    "ngx-mask": "^11.1.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

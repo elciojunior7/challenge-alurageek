@@ -21,7 +21,7 @@
 }
 
 .button--delete {
-    background-color: #b20000;
+    background-color: var(--error-color);
     border: none;
     color: var(--accent-color);
     font-weight: 600;
@@ -29,6 +29,31 @@
     padding-top: .7rem;
     padding-bottom: .7rem;
     text-align: center;
+}
+
+.select--dropdown {
+    border: none;
+    background-color: #FFF;
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--text-color) 50%),
+        linear-gradient(135deg, var(--text-color) 50%, transparent 50%),
+        linear-gradient(to right, var(--text-color), var(--text-color));
+    background-position: 
+        calc(100% - 20px) 50%,
+        calc(100% - 15px) 50%,
+        calc(100% - 2.5em) .5em;
+    background-repeat: no-repeat;
+    background-size:
+        5px 5px,
+        5px 5px,
+        1px 2em;
+    color: var(--text-color);
+    font-size: 110%;
+    height: 50px;
+    padding-left: 16px;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 @media screen and (min-width: 768px){  /* > tablet */

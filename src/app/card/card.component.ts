@@ -19,7 +19,7 @@ export class CardComponent implements OnInit {
 
   imageBasePath = environment.supabaseImagesUrl;
 
-  constructor(private generalService: GeneralService, private location: Location) { }
+  constructor(private generalService: GeneralService) { }
 
   ngOnInit(): void {
   }

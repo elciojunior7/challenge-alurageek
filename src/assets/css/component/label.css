@@ -1,8 +1,13 @@
 .label--float {
-    color: #a2a2a2;
+    color: var(--label-color);
     font-size: .75rem;
     left: .75rem;
     margin-bottom: -1.6rem;
     position: relative;
     top: 0;
+}
+
+.label--ordinary {
+    color: var(--label-color);
+    font-size: .75rem;
 }

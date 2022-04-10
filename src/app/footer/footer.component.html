@@ -9,13 +9,18 @@
         <li class="links__item"><a>Quero ser franqueado</a>v
         <li class="links__item"><a>Anuncie aqui</a></li>
     </ul>
-    <form class="contact-us">
+    <form class="contact-us" [formGroup]="contactusForm" (ngSubmit)="sendMessage()">
         <h2 class="contact-us__title">Fale conosco</h2>
         <label for="name" class="label--float">Nome</label>
-        <input id="name" type="text" class="contact-us__name" />
-        <label for="message" class="visibility-hidden">Escreva sua mensagem</label>
-        <textarea id="message" class="contact-us__message" placeholder="Escreva sua mensagem"></textarea>
-        <button class="contact-us__button button--solid">Enviar mensagem</button>
+        <input id="name" type="text" class="contact-us__name input--ordinary" formControlName="name" [class.input--error]="name?.invalid && submittedOnce" />
+        <p *ngIf="name?.errors?.required && (name?.dirty || submittedOnce)" class="message--error">Campo obrigatório</p>
+        <p *ngIf="name?.invalid && !name?.errors?.required && submittedOnce && (name?.dirty || name?.touched)" class="message--error">Digite no máximo 40 caracteres</p>
+        <label for="message" class="visibility--hidden">Escreva sua mensagem</label>
+        <textarea id="message" class="contact-us__message textarea--ordinary" formControlName="message" 
+                    placeholder="Escreva sua mensagem" [class.input--error]="message?.invalid && submittedOnce"></textarea>
+        <p *ngIf="message?.errors?.required && (message?.dirty || submittedOnce)" class="message--error">Campo obrigatório</p>
+        <p *ngIf="message?.invalid && !message?.errors?.required && submittedOnce && (message?.dirty || message?.touched)" class="message--error">Digite no máximo 120 caracteres</p>
+        <button type="submit" class="contact-us__button button--solid">Enviar mensagem</button>
     </form>
 </section>
 <footer class="footer">
