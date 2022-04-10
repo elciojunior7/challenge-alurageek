@@ -11,6 +11,10 @@ O challenge consiste no desenvolvimento de features disponibilizadas semanalment
 - CSS (BEM, flex, grid)
 - Angular 11.2.2 com TypeScript (rotas, ngx-loading...)
 - @ngx-env/builder (para permitir uso de variaveis de ambiente de servidor pela Angular
+- ngx-loading (loading durante requests)
+- ngx-mask (mácara de campos)
+- @angular/forms (FormControl, Validators para controle de validação de campos required, RegEx, etc)
+- AuthGuard e canActivate (para impedir acesso às rotas ADM sem ter feito login)
 - Supabase (backend e banco de dados)
 - Node.js/ npm
 
