@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Category, Product } from '../models/product';
-import { DataResponse, GeneralService } from '../services/general.service';
+import { Category, Product } from '../../../models/product';
+import { DataResponse, GeneralService } from '../../../services/general.service';
 import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';

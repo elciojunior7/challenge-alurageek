@@ -2,8 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {ActivatedRoute, NavigationEnd, Router} from '@angular/router';
 import { SubscriptionLike } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Product } from '../models/product';
-import { GeneralService } from '../services/general.service';
+import { Product } from '../../models/product';
+import { GeneralService } from '../../services/general.service';
 
 @Component({
   selector: 'alr-detail',

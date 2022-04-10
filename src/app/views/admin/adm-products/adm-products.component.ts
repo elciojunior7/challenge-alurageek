@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../models/product';
-import { GeneralService } from '../services/general.service';
+import { Product } from 'src/app/models/product';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'alr-adm-products',

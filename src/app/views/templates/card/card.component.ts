@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faTrashCan, faPencil } from "@fortawesome/free-solid-svg-icons";
 import { environment } from 'src/environments/environment';
-import { Product } from '../models/product';
-import { DataResponse, GeneralService } from '../services/general.service';
-import { Location } from '@angular/common';
+import { Product } from '../../../models/product';
+import { DataResponse, GeneralService } from '../../../services/general.service';
 
 @Component({
   selector: 'alr-card',

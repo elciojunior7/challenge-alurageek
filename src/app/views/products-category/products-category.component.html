@@ -1,0 +1,11 @@
+<main class="content">
+    <section class="grid" *ngIf="productsByCategory && productsByCategory.length > 0">
+        <div class="grid__header">
+            <h4 class="grid__title">Produtos da categoria [ {{ category }} ]</h4>
+        </div>
+        <div class="cards">
+            <alr-card *ngFor="let prod of productsByCategory" [product]="prod" goLink="true" ></alr-card>
+        </div>
+    </section>
+</main>
+<ngx-loading [show]="loading"></ngx-loading>

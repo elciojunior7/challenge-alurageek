@@ -10,7 +10,7 @@
     <section class="grid" *ngIf="productsStarwars.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Star Wars</h4>
-            <a class="grid__link">
+            <a routerLink="/products/{{ CAT_STARWARS }}" class="grid__link">
                 Ver Tudo
                 <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
             </a>
@@ -22,7 +22,7 @@
     <section id="consoles" class="grid" *ngIf="productsConsoles.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Consoles</h4>
-            <a class="grid__link">
+            <a routerLink="/products/{{ CAT_CONSOLES }}" class="grid__link">
                 Ver Tudo
                 <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
             </a>
@@ -34,7 +34,7 @@
     <section class="grid" *ngIf="productsStuffs.length > 0">
         <div class="grid__header">
             <h4 class="grid__title">Diversos</h4>
-            <a class="grid__link">
+            <a routerLink="/products/{{ CAT_STUFFS }}" class="grid__link">
                 Ver Tudo
                 <fa-icon class="grid__icon" [icon]="faArrowRight"></fa-icon>
             </a>

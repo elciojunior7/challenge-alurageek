@@ -4,14 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { HeaderComponent } from './header/header.component';
-import { CardComponent } from './card/card.component';
-import { FooterComponent } from './footer/footer.component';
-import { StoreComponent } from './store/store.component';
-import { AdmProductComponent } from './adm-product/adm-product.component';
-import { LoginComponent } from './login/login.component';
-import { DetailComponent } from './detail/detail.component';
-import { AdmProductsComponent } from './adm-products/adm-products.component';
+import { CardComponent } from './views/templates/card/card.component';
+import { FooterComponent } from './views/templates/footer/footer.component';
+import { StoreComponent } from './views/store/store.component';
+import { AdmProductComponent } from './views/admin/adm-product/adm-product.component';
+import { LoginComponent } from './views/login/login.component';
+import { DetailComponent } from './views/detail/detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxLoadingModule, ngxLoadingAnimationTypes } from 'ngx-loading';
@@ -20,6 +18,9 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
 // Enable comma as default currency separator of cents
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
+import { HeaderComponent } from './views/templates/header/header.component';
+import { AdmProductsComponent } from './views/admin/adm-products/adm-products.component';
+import { ProductsCategoryComponent } from './views/products-category/products-category.component';
 registerLocaleData(ptBr);
 // **************************************************
 
@@ -35,7 +36,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     AdmProductComponent,
     LoginComponent,
     DetailComponent,
-    AdmProductsComponent
+    AdmProductsComponent,
+    ProductsCategoryComponent
   ],
   imports: [
     BrowserModule,

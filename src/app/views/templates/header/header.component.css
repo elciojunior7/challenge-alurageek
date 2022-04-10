@@ -15,7 +15,7 @@
 } 
 
 .header__logo{
-    background: url('../../assets/img/Logo.png') center / cover no-repeat;
+    background: url('../../../../assets/img/Logo.png') center / cover no-repeat;
     height: 28px;
     width: 100px;
     object-fit: cover;

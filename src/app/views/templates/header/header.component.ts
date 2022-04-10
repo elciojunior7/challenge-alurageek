@@ -2,7 +2,7 @@ import { Component, Input, OnInit, OnChanges, SimpleChanges, OnDestroy } from '@
 import { NavigationEnd, Router } from '@angular/router';
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { SubscriptionLike } from 'rxjs';
-import { GeneralService } from '../services/general.service';
+import { GeneralService } from 'src/app/services/general.service';
 
 @Component({
   selector: 'alr-header',

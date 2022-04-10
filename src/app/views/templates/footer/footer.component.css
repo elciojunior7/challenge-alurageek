@@ -7,7 +7,7 @@
 }
 
 .logo{
-    background: url('../../assets/img/Logo.png') center / cover no-repeat;
+    background: url('../../../../assets/img/Logo.png') center / cover no-repeat;
     display: none;
     height: 51px;
     object-fit: cover;
@@ -23,7 +23,7 @@
 }
 
 .links__logo{
-    background: url('../../assets/img/Logo.png') center / cover no-repeat;
+    background: url('../../../../assets/img/Logo.png') center / cover no-repeat;
     display: block;
     height: 51px;
     object-fit: cover;

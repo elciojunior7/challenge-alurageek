@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Category, Product } from '../models/product';
-import { GeneralService } from '../services/general.service';
+import { Category, Product } from '../../models/product';
+import { GeneralService } from '../../services/general.service';
 
 @Component({
   selector: 'alr-store',
@@ -16,6 +16,9 @@ export class StoreComponent implements OnInit {
   productsStuffs: Product[] = [];
   productsConsoles: Product[] = [];
   loading = true;
+  CAT_STARWARS: string = Category.STARWARS.trim();
+  CAT_CONSOLES: string = Category.STUFFS;
+  CAT_STUFFS: string = Category.CONSOLES;
 
   constructor(private generalService: GeneralService) { }
 

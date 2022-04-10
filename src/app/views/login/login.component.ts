@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { GeneralService } from '../services/general.service';
+import { GeneralService } from '../../services/general.service';
 
 @Component({
   selector: 'alr-login',
