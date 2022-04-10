@@ -1,6 +1,6 @@
 <main class="content">
     <form class="login__form" [formGroup]="loginForm" (ngSubmit)="login()">
-        <h2 class="login__title">Iniciar Sessão <span class="login__title___obs">(email: bob@bob.com / senha: bob)</span></h2>
+        <h2 class="login__title">Iniciar Sessão <span class="login__title___obs">(email: {{hardcodedEmail}} / senha: {{hardcodedPassword}})</span></h2>
         <br/>
         <label for="email" class="label--float">Escreva seu e-mail</label>
         <input id="email" type="text" class="login__email input--ordinary" formControlName="email" [class.input--error]="email?.invalid && submittedOnce" />

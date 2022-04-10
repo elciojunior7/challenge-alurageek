@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
 
   constructor(private router: Router) {
     this.navigationSubscription = this.router.events.subscribe((e: any) => {
-      if (e instanceof NavigationEnd) {
+      if (e instanceof NavigationEnd && this.contactusForm) {
         this.contactusForm.reset();
         this.submittedOnce = false;
       }

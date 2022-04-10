@@ -3,7 +3,7 @@
         <img class="product__image" src="{{imageBasePath}}/{{product.imagePath}}" alt="imagem nintendo switch" />
         <div class="product__body">
             <h5 class="product__title">{{product.title}}</h5>
-            <div class="product__cost">{{product.cost/100 | currency:'BRL':'symbol'}}</div>
+            <div class="product__cost">{{product.cost | currency:'BRL':'symbol'}}</div>
             <p class="product__description">{{product.description}}</p>
         </div>
     </section>

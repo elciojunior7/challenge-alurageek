@@ -25,6 +25,9 @@ type MyError = {
 export class GeneralService {
   
   supabase: SupabaseClient;
+  strLogged: string = 'logged';
+  authorized: boolean = false;
+  
 
   constructor(private http: HttpClient) {
     //super();
@@ -202,6 +205,27 @@ export class GeneralService {
     }
 
     return {msg: "Sucesso =]", status: status || 200, product: prod};
+  }
+
+  // -----------------------------------------------------------------------------------
+  // Login/Logoff
+
+  login(){
+    localStorage.setItem(this.strLogged,'true');
+    this.authorized = true;
+  }
+
+  logoff(): boolean{
+    if(confirm('Você será deslogado e encaminhado para tela inicial...')){
+      localStorage.removeItem(this.strLogged);
+      this.authorized = false;
+      return true;
+    }
+    return false;
+  }
+
+  checkLogin(): string{
+    return localStorage.getItem(this.strLogged);
   }
 
 }

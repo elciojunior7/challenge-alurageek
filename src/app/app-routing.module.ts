@@ -5,15 +5,16 @@ import { LoginComponent } from './login/login.component';
 import { AdmProductsComponent } from './adm-products/adm-products.component';
 import { StoreComponent } from './store/store.component';
 import { AdmProductComponent } from './adm-product/adm-product.component';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/store', pathMatch: 'full' },
   { path: 'store', component: StoreComponent },
-  { path: 'adm-product/:id', component: AdmProductComponent },
-  { path: 'adm-product', component: AdmProductComponent },
   { path: 'login', component: LoginComponent },
   { path: 'detail/:id', component: DetailComponent },
-  { path: 'adm-products', component: AdmProductsComponent }
+  { path: 'adm-product/:id', component: AdmProductComponent, canActivate: [AuthGuard] },
+  { path: 'adm-product', component: AdmProductComponent, canActivate: [AuthGuard] },
+  { path: 'adm-products', component: AdmProductsComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

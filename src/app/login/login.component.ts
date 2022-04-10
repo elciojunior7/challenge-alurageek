@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { GeneralService } from '../services/general.service';
 
 @Component({
   selector: 'alr-login',
@@ -12,8 +13,10 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submittedOnce: boolean = false;
   loginError: boolean = false;
-
-  constructor(private router: Router) { }
+  hardcodedEmail: string = "bob@bob.com";
+  hardcodedPassword: string = "bob";
+  
+  constructor(private router: Router, private generalService: GeneralService) { }
 
   get email(): AbstractControl | null { return this.loginForm.get('email'); }
   get password(): AbstractControl | null { return this.loginForm.get('password'); }
@@ -35,9 +38,10 @@ export class LoginComponent implements OnInit {
     this.loginError = false;
 
     if(this.loginForm.valid){
-      if(this.loginForm.get('email').value === "bob@bob.com" && this.loginForm.get('password').value === "bob")
+      if(this.loginForm.get('email').value === this.hardcodedEmail && this.loginForm.get('password').value === this.hardcodedPassword){
+        this.generalService.login();
         this.router.navigate(['/adm-products']);
-      else
+      }else
         this.loginError = true;
     } 
   }
